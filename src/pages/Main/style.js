@@ -20,9 +20,9 @@ export const Card = styled.View`
   margin: 0 20px;
   height: 100%;
   position: absolute;
-  left:0;
-  right:0;
-  top:380px;
+  left: 0;
+  right: 0;
+  top: 380px;
 `;
 export const CardHeader = styled.View`
 flex-direction: row;
@@ -36,20 +36,20 @@ export const CardContent = styled.View`
   justify-content: center;
 `;
 export const Title = styled.Text`
-font-size:13px;
-color: #999;
+  font-size: 13px;
+  color: #999;
 `;
 export const Description = styled.Text`
-font-size:32px;
-margin-top:3px;
-color:#333;
+  font-size: 32px;
+  margin-top: 3px;
+  color: #333;
 `;
 export const CardFooter = styled.View`
-padding: 30px;
-background: #eee;
-border-radius: 4px;
+  padding: 30px;
+  background: #eee;
+  border-radius: 4px;
 `;
 export const Annotation = styled.Text`
-font-size:12px;
-color: #333;
+  font-size: 12px;
+  color: #333;
 `;
