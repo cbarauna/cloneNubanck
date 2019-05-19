@@ -5,9 +5,26 @@ import {
   Container, TabsContainer, TabItem, TabText,
 } from './style';
 
-export default function Header() {
+export default function Tabs({ translatedY }) {
   return (
-    <Container>
+    <Container
+      style={{
+        transform: [
+          {
+            translatedY: translatedY.interpolate({
+              inputRange: [0, 380],
+              outputRange: [0, 30],
+              extrapolate: 'clamp',
+            }),
+          },
+        ],
+        opacity: translatedY.interpolate({
+          inputRange: [0, 380],
+          outputRange: [1, 0.3],
+          extrapolate: 'clamp',
+        }),
+      }}
+    >
       <TabsContainer>
         <TabItem>
           <Icon name="person-add" size={24} color="#FFF" />
@@ -19,8 +36,6 @@ export default function Header() {
           <TabText>Cobrar</TabText>
         </TabItem>
 
-
-  
         <TabItem>
           <Icon name="arrow-downward" size={24} color="#FFF" />
           <TabText>Depositar</TabText>
@@ -33,7 +48,6 @@ export default function Header() {
           <Icon name="lock" size={24} color="#FFF" />
           <TabText>Bloquear Cartão</TabText>
         </TabItem>
- 
       </TabsContainer>
     </Container>
   );

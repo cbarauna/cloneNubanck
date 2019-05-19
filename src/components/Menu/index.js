@@ -4,12 +4,19 @@ import QRCode from 'react-native-qrcode';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
-  Container, Code, Nav, NavItem, NavText,
+  Container, Code, Nav, NavItem, NavText, SignOutButton, SignOutButtonText,
 } from './style';
 
-export default function Menu() {
+export default function Menu({ translatedY }) {
   return (
-    <Container>
+    <Container
+      style={{
+        opacity: translatedY.interpolate({
+          inputRange: [0, 150],
+          outputRange: [0, 1],
+        }),
+      }}
+    >
       <Code>
         <QRCode value="http://google.com.br" size={80} bgColor="#8B10AE" fgColor="#FFF" />
       </Code>
@@ -34,6 +41,10 @@ export default function Menu() {
           <NavText>Cartão</NavText>
         </NavItem>
       </Nav>
+
+      <SignOutButton onPress={() => {}}>
+        <SignOutButtonText>Sair</SignOutButtonText>
+      </SignOutButton>
     </Container>
   );
 }
